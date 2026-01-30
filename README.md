@@ -5,11 +5,10 @@ This project is a simple Vue application.
 ## How to Run the Project
 
 1. Clone the repository from GitHub  
-2. Open the project folder in your code editor  
-3. Install dependencies
-4. Run the development server
+2. Open the cmd for each folder (frontend and backend)  
+3. Install dependencies (npm install)
+4. Run the development server (npm run dev)
 5. Open the local URL shown in the terminal in your browser
-
 
 ## What Was Implemented
 
