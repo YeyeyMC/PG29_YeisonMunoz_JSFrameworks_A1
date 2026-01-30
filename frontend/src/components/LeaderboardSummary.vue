@@ -30,30 +30,6 @@
     const leaderboardData = ref<LeaderboardItem[]>([]); 
     const errorMessage = ref("");
 
-    //async function fetchleaderboardData() {
-    //    try {
-    //        const res = await fetch(`http://localhost:3000/api/leaderboard-summary`)
-    //        console.log(res)
-    //        if (!res.ok) throw new Error(`Server error ${res.status}`)
-
-    //        const data = (await res.json()) as LeaderboardItem[];
-    //        leaderboardData.value = data;
-    //    }
-    //    catch (err: any) {
-    //        //errorMessage.value = err?.message ?? "Unknown";
-    //        console.log("uweu");
-    //    }
-    //}
-
-    //const fetchData = async () => {
-    //    const res = await fetch(`http://localhost:3000/api/leaderboard-summary`, {
-    //        method: "GET",
-    //        headers: { "Accept": "application/json" }
-    //    });
-    //    const json = await res.json();
-    //    console.log(json);
-    //}
-
     const fetchData = async () => {
         const res = await fetch(`http://localhost:3000/api/leaderboard-summary`, {
             method: "GET",
