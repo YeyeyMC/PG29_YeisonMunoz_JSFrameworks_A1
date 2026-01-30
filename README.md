@@ -27,7 +27,7 @@ This project is a simple Vue application.
 - The leaderboard table fetches mock data from a simple backend
 
 ### Contact Screen
-- Includes a contact form component
+- Includes a contact form (Component)
 - Form fields:
   - Name
   - Email
