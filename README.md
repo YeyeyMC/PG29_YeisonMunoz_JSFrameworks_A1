@@ -14,15 +14,17 @@ This project is a simple Vue application.
 ## What Was Implemented
 
 ### Home Screen
-- Simple counter game.
-- Uses components and basic state logic.
-- Shows count and double value.
-- Includes a button to increment the counter.
+- Simple counter game
+- Uses components and basic state logic
+- Shows count and double value
+- Includes a button to increment the counter
 
 ### Leaderboard Screen
-- Leaderboard page.
-- Leaderboard table.
-- The leaderboard table fetches mock data from a simple backend.
+- Leaderboard page
+- Leaderboard Description (Component)
+- Leaderboard Controls (Component)
+- Leaderboard table (Component)
+- The leaderboard table fetches mock data from a simple backend
 
 ### Contact Screen
 - Includes a contact form component
@@ -30,10 +32,10 @@ This project is a simple Vue application.
   - Name
   - Email
   - Message
-- Submit button is included (no real backend logic).
+- Submit button is included (no real backend logic)
 
 ## Non working Elements
-- No real backend or database.
+- No real backend or database
 
 ## Author
 Yeison Munoz  
