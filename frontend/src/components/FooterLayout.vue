@@ -1,6 +1,6 @@
 <template>
     <section class="footer">
-        <p>@Yeison Munoz - VFS - Javascript Frameworks - 2025</p>
+        <p>@Yeison Munoz - VFS - Javascript Frameworks - 2026</p>
     </section>
 </template>
 

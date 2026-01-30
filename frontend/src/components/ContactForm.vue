@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label>Message</label>
-            <textarea placeholder="Your message"></textarea>
+            <input type="text" placeholder="Your message" />
         </div>
 
         <button type="button">Send</button>
@@ -39,23 +39,10 @@
         font-weight: 500;
     }
 
-    input, textarea {
+    input {
         width: 100%;
         padding: 8px;
         border: 1px solid #ccc;
         font-family: Arial;
-    }
-
-    textarea {
-        resize: vertical;
-        min-height: 80px;
-    }
-
-    button {
-        padding: 8px 16px;
-        background-color: black;
-        color: white;
-        border: none;
-        cursor: pointer;
     }
 </style>

@@ -10,8 +10,8 @@
 
             <nav>
                 <router-link to="/">Home</router-link>
-                <router-link to="/leaderboard">LeaderboardPage</router-link>
-                <router-link to="/contact">ContactPage</router-link>
+                <router-link to="/leaderboard">Leaderboard Page</router-link>
+                <router-link to="/contact">Contact Page</router-link>
             </nav>
         </header>
 

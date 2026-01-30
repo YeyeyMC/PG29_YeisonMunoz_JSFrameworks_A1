@@ -1,13 +1,16 @@
 <template>
     <div class="leaderboard-page">
         <h2> Leaderboard </h2>
+        <LeaderboardInfo />
+        <LeaderboardControls />
         <LeaderboardWidget />
     </div>
 </template>
 
 <script setup lang="ts">
     import LeaderboardWidget from "../components/LeaderboardSummary.vue"
-    import HeaderLayout from "../components/HeaderLayout.vue"
+    import LeaderboardControls from "../components/LeaderboardControls.vue"
+    import LeaderboardInfo from "../components/LeaderboardInfo.vue"
 </script>
 
 <style scoped>
