@@ -45,6 +45,44 @@ MongoDB
 - GET /api/login (Authenticates a user)
 - POST /api/contacts (Saves a contact message to MongoDB)
 
+## TESTING
+For testing porpuses, bellow I put the structure used in MySQL and MongoDB for data initialization
+
+### MySQL
+
+CREATE DATABASE jsframeworks_a2;
+USE jsframeworks_a2;
+
+CREATE TABLE leaderboard (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  player_name VARCHAR(100),
+  score INT
+);
+
+INSERT INTO leaderboard (player_name, score)
+VALUES ('TestPlayer', 1000);
+
+### MongoDB
+
+Create collection called users, contacts
+Insert a test user:
+
+{
+  "username": "admin",
+  "password": "1234"
+}
+
+### .env file
+
+PORT=3000
+
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASSWORD=spencer
+MYSQL_DATABASE=jsframeworks_a2
+
+MONGO_URI= (Placeholder for Spencer, I decided to remove it for security reasons, but honestly I'm not sure how that works)
+
 ## Author
 Yeison Munoz  
 Vancouver Film School  
