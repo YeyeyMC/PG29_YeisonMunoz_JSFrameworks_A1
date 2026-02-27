@@ -1,5 +1,9 @@
 import express, { type Request, type Response } from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+import leaderboardRouter from "./routes/leaderboard";
+
+dotenv.config();
 
 type LeaderboardItem = {
     player: string;
@@ -7,10 +11,11 @@ type LeaderboardItem = {
 };
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/leaderboard", leaderboardRouter);
 
 app.get("/api/ping", (req: Request, res: Response) => {
     res.json({ message: "OK" });
