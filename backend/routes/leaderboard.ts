@@ -3,6 +3,7 @@ import pool from "../db/mysql";
 
 const router = Router();
 
+// Mysql table structure
 type LeaderboardRow = {
     id: number;
     player: string;

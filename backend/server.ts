@@ -2,6 +2,9 @@ import express, { type Request, type Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import leaderboardRouter from "./routes/leaderboard";
+import { connectMongo } from "./db/mongo";
+import loginRouter from "./routes/login";
+import contactRouter from "./routes/contact";
 
 dotenv.config();
 
@@ -16,6 +19,8 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use("/api/leaderboard", leaderboardRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/contact", contactRouter);
 
 app.get("/api/ping", (req: Request, res: Response) => {
     res.json({ message: "OK" });
@@ -29,6 +34,10 @@ app.get("/api/leaderboard-summary", (req: Request, res: Response) => {
     ];
 
     res.json(summaryData);
+});
+
+connectMongo().catch((err) => {
+    console.error("Mongo connection error:", err);
 });
 
 app.listen(PORT, () => {
