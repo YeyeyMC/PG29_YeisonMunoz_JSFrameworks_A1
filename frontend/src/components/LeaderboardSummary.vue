@@ -1,46 +1,38 @@
 <template>
     <div class="leaderboard-summary">
         <h2>Leaderboard Summary</h2>
-        <table>
+
+        <p v-if="leaderboardStore.isLoading">Loading...</p>
+        <p v-else-if="leaderboardStore.error" class="error">
+            {{ leaderboardStore.error }}
+        </p>
+
+        <table v-else>
             <thead>
                 <tr>
                     <th>Player</th>
                     <th>Score</th>
                 </tr>
             </thead>
+
             <tbody>
-                <tr v-for="(item, index) in leaderboardData" :key="index">
-                    <td> {{ item.player }} </td>
-                    <td> {{ item.score }} </td>
+                <tr v-for="item in leaderboardStore.sortedItems" :key="item.id">
+                    <td>{{ item.player_name }}</td>
+                    <td>{{ item.score }}</td>
                 </tr>
             </tbody>
         </table>
-        <p v-if="errorMessage" class="error"> {{ errorMessage }} </p>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { onMounted, ref } from "vue";
+    import { onMounted } from "vue";
+    import { useLeaderboardStore } from "../stores/leaderboard";
 
-    type LeaderboardItem = {
-        player: string;
-        score: number;
-    }
-
-    const leaderboardData = ref<LeaderboardItem[]>([]); 
-    const errorMessage = ref("");
-
-    const fetchData = async () => {
-        const res = await fetch(`http://localhost:3000/api/leaderboard-summary`, {
-            method: "GET",
-            headers: { "Accept": "application/json" }
-        });
-        const data = (await res.json()) as LeaderboardItem[];
-        leaderboardData.value = data;
-    }
+    const leaderboardStore = useLeaderboardStore();
 
     onMounted(() => {
-        fetchData();
+        leaderboardStore.fetchLeaderboard();
     });
 </script>
 

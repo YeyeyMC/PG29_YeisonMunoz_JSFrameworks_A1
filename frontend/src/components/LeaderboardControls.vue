@@ -8,7 +8,12 @@
 </template>
 
 <script setup lang="ts">
+
+    import { useLeaderboardStore } from "../stores/leaderboard";
+
+    const leaderboardStore = useLeaderboardStore();
+
     const refreshLeaderboard = () => {
-        alert("Leaderboard refreshed!");
+        leaderboardStore.fetchLeaderboard();
     }
 </script>

@@ -16,6 +16,7 @@ type LeaderboardItem = {
 const app = express();
 const PORT = process.env.PORT;
 
+// app uses the router for the endpoints
 app.use(cors());
 app.use(express.json());
 app.use("/api/leaderboard", leaderboardRouter);
@@ -26,6 +27,7 @@ app.get("/api/ping", (req: Request, res: Response) => {
     res.json({ message: "OK" });
 }); 
 
+// this get is no longer used
 app.get("/api/leaderboard-summary", (req: Request, res: Response) => {
     const summaryData: LeaderboardItem[] = [
         { player: "Yeison", score: 1000 },

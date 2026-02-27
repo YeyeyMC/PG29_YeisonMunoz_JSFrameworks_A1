@@ -2,11 +2,21 @@
     <section class="header">
         <h1>My Incredible Game!</h1>
         <p>Yeison Munoz - VFS - Javascript Frameworks</p>
+
+        <div style="margin-top: 10px;">
+            <span v-if="userStore.isLoggedIn">
+                User: <b>{{ userStore.username }}</b>
+            </span>
+            <span v-else>
+                Not logged in
+            </span>
+        </div>
     </section>
 </template>
 
 <script setup lang="ts">
-    
+    import { useUserStore } from "../stores/user";
+    const userStore = useUserStore();
 </script>
 
 <style scoped>
