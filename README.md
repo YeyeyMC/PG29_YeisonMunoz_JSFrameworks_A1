@@ -1,40 +1,49 @@
-# PG29_YeisonMunoz_WebAppFrameworks_A1
+# PG29_YeisonMunoz_WebAppFrameworks_A2
 
-This project is a simple Vue application.
+This project is a fullstack web application with
+- Frontend: Vue, Pinia
+- Backend: Node.js, Express
+- Databases:
+  - MySQL (Leaderboard data)
+  - MongoDB (Users + Contact Messages) 
+
+## Application Features
+- User login using credentials stored in MongoDB
+- Route protection using beforeEach and meta.requiresAuth
+- Logged in user is stored in a Pinia store
+- User state persists across views
+- Leaderboard data is fetched from MySQL
+- Data is retrieved through /api/leaderboard.
+- Pinia store manages:
+  - state
+  - getters (sorted leaderboard)
+  - actions (fetchLeaderboard)
+Sorting options:
+  - Score (High -> Low)
+  - Score (Low -> High)
+  - Name (A -> Z)
+  - Name (Z -> A)
+- Refresh button re fetches live database data
+-   Contact form sends POST request to /api/contacts
+-   Messages are stored in MongoDB
 
 ## How to Run the Project
 
 1. Clone the repository from GitHub  
-2. Open the cmd for each folder (frontend and backend)  
-3. Install dependencies (npm install)
-4. Run the development server (npm run dev)
-5. Open the local URL shown in the terminal in your browser
+2. Backend Setup
+   - npm install
+   - npm run dev
+3. Frontend Setup
+   - npm install
+   - npm run dev
 
-## What Was Implemented
+## API EndPoints
+MySQL
+- GET /api/leaderboard (Returns leaderboard from MySQL)
 
-### Home Screen
-- Simple counter game
-- Uses components and basic state logic
-- Shows count and double value
-- Includes a button to increment the counter
-
-### Leaderboard Screen
-- Leaderboard page
-- Leaderboard Description (Component)
-- Leaderboard Controls (Component)
-- Leaderboard table (Component)
-- The leaderboard table fetches mock data from a simple backend
-
-### Contact Screen
-- Includes a contact form (Component)
-- Form fields:
-  - Name
-  - Email
-  - Message
-- Submit button is included (no real backend logic)
-
-## Non working Elements
-- No real backend or database
+MongoDB
+- GET /api/login (Authenticates a user)
+- POST /api/contacts (Saves a contact message to MongoDB)
 
 ## Author
 Yeison Munoz  
